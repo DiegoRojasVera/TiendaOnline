@@ -31,7 +31,7 @@ const Checkout = (props) => {
 
     }, [])
 
-    const checkout = () => {
+    const checkOut = () => {
         let order = {
             city,
             country,
@@ -43,7 +43,7 @@ const Checkout = (props) => {
             zip,
 
         }
-        props.navigation.novigate("Payment", { order: order })
+        props.navigation.navigate("Payment", { order: order })
     }
     return (
 
@@ -70,9 +70,9 @@ const Checkout = (props) => {
                 />
                 <Input
                     placeholder={"Shipping Address 2"}
-                    name={"shippingAddres2"}
+                    name={"shippingAddress2"}
                     valeu={address2}
-                    onChangeText={(text) => setAdress2(text)}
+                    onChangeText={(text) => setAddress2(text)}
                 />
                 <Input
                     placeholder={"City"}

@@ -47,7 +47,7 @@ const Payment = (props) => {
             <Content>
                 {methods.map((item, index) => {
                     return (
-                        <ListItem
+                        <ListItem key={item.name}
                             onPress={() => setSelected(item.value)}
                         >
                             <Left>
@@ -70,17 +70,20 @@ const Payment = (props) => {
                         onValueChange={(x) => setCard(x)}
                     >
                         {paymentCards.map((c, index) => {
-                            return <Picker.Item label={c.name} value={c.name} />
+                            return <Picker.Item
+                                key={c.name}
+                                label={c.name}
+                                value={c.name} />
                         })}
                     </Picker>
                 ) : null}
                 <View style={{ marginTop: 60, alignSelf: 'center' }}>
                     <Button title={"Confirm"}
-                        onPress={() => props.navigation.navigte("Confirm", { order })} />
+                        onPress={() => props.navigation.navigate("Confirm", { order })} />
                 </View>
             </Content>
         </Container >
     )
 }
 
-export default Payment;
+export default Payment;   

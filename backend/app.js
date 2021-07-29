@@ -16,7 +16,7 @@ app.options('*', cors());
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 app.use(authJwt());
-app.use('public/uploads', express.static(__dirname+'public/uploads'));
+app.use('public/uploads', express.static(__dirname + 'public/uploads'));
 app.use(errorHandler);
 
 
@@ -46,7 +46,15 @@ mongoose.connect(process.env.CONNECTION_STRING, {
     .catch((err) => {
         console.log(err);
     })
-app.listen(3000, () => {
+//app.listen(3000, () => {
 
-    console.log('servece is running http://localhost:3000');
+//    console.log('servece is running http://localhost:3000');
+//})
+
+
+// Production
+
+var server = app.listen(process.env.PORT || 3000, function () {
+    var port = server.address().port;
+    console.log("Express is working on port " + port)
 })

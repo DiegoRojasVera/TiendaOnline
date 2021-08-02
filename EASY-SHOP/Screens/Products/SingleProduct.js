@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Image, View, StyleSheet, Text, ScrollView, Button } from 'react-native';
 import { Left, Right, Container, H1 } from 'native-base';
-
+import Toast from 'react-native-toast-message';
 import { connect } from 'react-redux';
 import * as actions from '../../Redux/Actions/cartActions';
 
@@ -38,7 +38,9 @@ const SingleProduct = (props) => {
                 <Right>
                     <Button
                         title="Add"
-                        onPress={() => props.addItemToCart(item)}
+                        onPress={() => {
+                            props.addItemToCart(item)
+                        }}
                     />
                 </Right>
             </View>

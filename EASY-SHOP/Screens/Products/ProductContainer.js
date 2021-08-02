@@ -13,7 +13,7 @@ import CategoryFilter from './CategoryFilter';
 
 
 var { height } = Dimensions.get('window')
-const data = require('../../assets/data/products.json')
+
 const productsCategories = require('../../assets/data/categories.json');
 
 const ProductContainer = (props) => {
@@ -78,8 +78,8 @@ const ProductContainer = (props) => {
     const searchProduct = (text) => {
         setProductsFiltered(
             products.filter((i) => i.name.toLowerCase().includes(text.toLowerCase()))
-        )
-    }
+        );
+    };
 
     const openList = () => {
         setFocus(true);

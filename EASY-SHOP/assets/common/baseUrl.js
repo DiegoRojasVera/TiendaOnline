@@ -1,7 +1,11 @@
 import { Platform } from 'react-native'
 
-let baseURL = 'https://easy-shop-server21.herokuapp.com//api/v1/'
-//let baseURL = '';
+  let baseURL = 'https://easy-shop-server21.herokuapp.com/api/v1/'
+
+
+//  coneccion para base en local y internet
+
+// let baseURL = '';
 
 // {
 //     Platform.OS == 'android'
